@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="search-box">
+                <input type="text" placeholder="Enter City name" class="input-box">
+                <button class='bx bx-search-alt' id="searchBtn"></button>
+            </div>
+        </div>
+
+        <div class="weather-body">
+
+            <!-- <h2 id="city_name">
+                delhi
+            </h2> -->
+
+            
+            <img src="img/cloud.png" alt="Weather image" class="weather_img">
+            <div class="weather-box">
+                <p class="temperature">0 <sup>°C</sup></p>
+                <p class="description">Light Rain</p>
+            </div>
+
+            <div class="weather-details">
+                <div class="humidity">
+                    <i class="fa-solid fa-droplet"></i>
+                    <div class="text">
+                        <span id="humidity">45%</span>
+                        <p>humidity</p>
+                    </div>
+                </div>
+
+                <div class="wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <div class="text">
+                        <span id="wind-speed">12Km/H</span>
+                        <p>wind-speed</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="location-not-found">
+        <h1>Sorry, Location not found!!!</h1>
+        <img src="img/404.png" alt="404 error">
+    </div>
+
+    <script src="https://kit.fontawesome.com/a7220980ba.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
