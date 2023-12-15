@@ -7,12 +7,12 @@ const humidity = document.getElementById('humidity');
 const wind_speed = document.getElementById('wind-speed');
 const location_not_found = document.querySelector('.location-not-found'); 
 const weather_body = document.querySelector('.weather-body');
-// const city_name = document.querySelector('.city_name');
+
 
 
 async function checkWeather(_city){
     const API_key = "6fe87ae332a7604926b893e8131a2987";
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${_city}&appid=${API_key}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${_city}&appid=${API_key}&units=metric`;
     const weather_data = await fetch(`${url}`).then(response => response.json());
 
     
@@ -28,32 +28,34 @@ async function checkWeather(_city){
 
     location_not_found.style.display = "none";
     weather_body.style.display = "flex";
-    temperature.innerHTML = `${Math.round(weather_data.main.temp - 273.15)}°C`;
+    temperature.innerHTML = `${(weather_data.main.temp)}°C`;
     description.innerHTML = `${weather_data.weather[0].description}`;
     humidity.innerHTML = `${weather_data.main.humidity}%`;
     wind_speed.innerHTML = `${weather_data.wind.speed}Km/H`;
-    // city_name.innerHTML = `${weather_data.name}`;
+    city_name.innerHTML = `${weather_data.name}`;
+
+
    
 
 
     switch(weather_data.weather[0].main){
-        case 'Clouds': weather_img.src = "img/cloud.png";
+        case 'Clouds': weather_img.src = "cloud.png";
         break;
-        case 'Clear': weather_img.src = "img/clear.png";
+        case 'Clear': weather_img.src = "clear.png";
         break;
-        case 'mist': weather_img.src = "img/mist.png";
+        case 'mist': weather_img.src = "mist.png";
         break;
-        case 'Rain': weather_img.src = "img/rain.png";
+        case 'Rain': weather_img.src = "rain.png";
         break;
-        case 'Snow': weather_img.src = "img/snow.png";
+        case 'Snow': weather_img.src = "snow.png";
         break;
-        case 'Drizzle': weather_img.src = "img/drizzle.png";
+        case 'Drizzle': weather_img.src = "drizzle.png";
         break;
     }
-        
-    // console.log(weather_data.name);
+ 
     console.log(weather_data);
 }
 searchBtn.addEventListener('click', ()=>{
     checkWeather(inputBox.value);
 })
+

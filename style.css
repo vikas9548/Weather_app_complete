@@ -54,7 +54,7 @@ body{
 .search-box button{
     width: 46px;
     height: 46px;
-    background-color: rgb(44, 32, 218);
+    background-color: rgb(90, 79, 236);
     border-radius: 50%;
     cursor: pointer;
     font-style: 20px;
@@ -64,9 +64,11 @@ body{
     background-color: gray;
     color: rgb(250, 251, 250);
 }
+.bx-search-alt{font-size: 28px; color: white;}
+.name{ text-align: center; margin: 10px;}
 
 .weather-body{
-    display: none;
+    /* display: none; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
